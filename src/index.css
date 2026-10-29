@@ -1,0 +1,324 @@
+   * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins', sans-serif;
+   }
+
+   body {
+     min-height: 100vh;
+     overflow-x: hidden;
+     background: #050816;
+     color: #fff;
+   }
+
+   /* ===============================
+           Animated Background
+        ================================== */
+   .hero-section {
+     min-height: 100vh;
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
+   }
+
+   .hero-section::before {
+     content: "";
+     position: absolute;
+     inset: 0;
+     background:
+       radial-gradient(circle at 20% 30%, rgba(0, 255, 255, .25), transparent 30%),
+       radial-gradient(circle at 80% 20%, rgba(255, 0, 255, .2), transparent 30%),
+       radial-gradient(circle at 50% 80%, rgba(0, 119, 255, .2), transparent 35%);
+     animation: floatBG 10s ease-in-out infinite alternate;
+   }
+
+   @keyframes floatBG {
+     0% {
+       transform: scale(1) translateY(0);
+     }
+
+     100% {
+       transform: scale(1.1) translateY(-20px);
+     }
+   }
+
+   /* ===============================
+            Liquid Glass System
+        ================================== */
+   .glass-card {
+     background: rgba(255, 255, 255, 0.08);
+     backdrop-filter: blur(25px);
+     -webkit-backdrop-filter: blur(25px);
+     border: 1px solid rgba(255, 255, 255, 0.15);
+     border-radius: 30px;
+     box-shadow:
+       0 10px 40px rgba(0, 0, 0, 0.35),
+       inset 0 1px 0 rgba(255, 255, 255, 0.2);
+     position: relative;
+     overflow: hidden;
+   }
+
+   .glass-card::before {
+     content: '';
+     position: absolute;
+     inset: 0;
+     background:
+       linear-gradient(135deg,
+         rgba(255, 255, 255, 0.25),
+         transparent 40%);
+     pointer-events: none;
+   }
+
+   /* ===============================
+           Left Content
+        ================================== */
+   .hero-content h1 {
+     font-size: 4rem;
+     font-weight: 700;
+     line-height: 1.15;
+     margin-bottom: 20px;
+   }
+
+   .gradient-text {
+     background: linear-gradient(90deg,
+         #00e5ff,
+         #7c4dff,
+         #ff4ecd);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+   }
+
+   .hero-content p {
+     font-size: 1.1rem;
+     color: rgba(255, 255, 255, .75);
+     max-width: 550px;
+   }
+
+   /* ===============================
+            Register Form
+        ================================== */
+   .register-card {
+     padding: 20px 80px;
+   }
+
+   .register-title {
+     font-size: 2rem;
+     font-weight: 700;
+     text-align: center;
+     margin-bottom: 30px;
+   }
+
+   .form-control {
+     height: 55px;
+     border-radius: 15px;
+     background: rgba(255, 255, 255, .08);
+     border: 1px solid rgba(255, 255, 255, .15);
+     color: white;
+     margin-bottom: 20px;
+     width: 100%;
+     padding: 10px;
+   }
+
+   .form-control:focus {
+     background: rgba(255, 255, 255, .1);
+     color: white;
+     border-color: #00e5ff;
+     box-shadow: 0 0 20px rgba(0, 229, 255, .3);
+   }
+
+   .form-control::placeholder {
+     color: rgba(255, 255, 255, 0.5);
+   }
+
+   .btn-register {
+     height: 55px;
+     width: 100%;
+     border: none;
+     border-radius: 15px;
+     font-weight: 600;
+     background: linear-gradient(135deg,
+         #00e5ff,
+         #7c4dff);
+     transition: .4s;
+   }
+
+   .btn-register:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 15px 30px rgba(0, 229, 255, .35);
+   }
+
+   /* ===============================
+            Entrance Animations
+        ================================== */
+   .fade-left {
+     animation: fadeLeft 1.2s ease forwards;
+     opacity: 0;
+   }
+
+   .fade-right {
+     animation: fadeRight 1.2s ease forwards;
+     opacity: 0;
+   }
+
+   @keyframes fadeLeft {
+     from {
+       opacity: 0;
+       transform: translateX(-80px);
+     }
+
+     to {
+       opacity: 1;
+       transform: translateX(0);
+     }
+   }
+
+   @keyframes fadeRight {
+     from {
+       opacity: 0;
+       transform: translateX(80px);
+     }
+
+     to {
+       opacity: 1;
+       transform: translateX(0);
+     }
+   }
+
+   /* Floating Glow */
+   .glow {
+     position: absolute;
+     width: 350px;
+     height: 350px;
+     border-radius: 50%;
+     filter: blur(120px);
+     opacity: .3;
+     animation: pulse 8s infinite alternate;
+   }
+
+   .glow1 {
+     background: #00e5ff;
+     top: -80px;
+     left: -100px;
+   }
+
+   .glow2 {
+     background: #7c4dff;
+     bottom: -100px;
+     right: -100px;
+   }
+
+   @keyframes pulse {
+     from {
+       transform: scale(1);
+     }
+
+     to {
+       transform: scale(1.4);
+     }
+   }
+
+   /* Responsive */
+   @media(max-width:991px) {
+     .hero-content {
+       text-align: center;
+       margin-bottom: 50px;
+     }
+
+     .hero-content h1 {
+       font-size: 2.8rem;
+     }
+   }
+
+
+
+   .hero-container {
+     position: relative;
+     height: 100vh;
+     overflow: hidden;
+     background: linear-gradient(135deg, #001f3f, #004080);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     font-family: 'Poppins', sans-serif;
+     padding: 0 2rem;
+   }
+
+   .hero-background {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') center center/cover no-repeat;
+     filter: brightness(0.5);
+     z-index: 1;
+   }
+
+   /* Liquid Glass effect */
+   .liquid-glass-container {
+     position: relative;
+     z-index: 5;
+     background: rgba(255, 255, 255, 0.1);
+     border-radius: 16px;
+     border: 1px solid rgba(255, 255, 255, 0.3);
+     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+     backdrop-filter: blur(12px);
+     -webkit-backdrop-filter: blur(12px);
+     padding: 3rem 4rem;
+     max-width: 720px;
+     text-align: center;
+     user-select: none;
+   }
+
+   .hero-title {
+     font-size: 3rem;
+     font-weight: 700;
+     margin-bottom: 1rem;
+   }
+
+   .hero-subtitle {
+     font-size: 1.25rem;
+     margin-bottom: 2rem;
+     font-weight: 300;
+     letter-spacing: 0.05em;
+   }
+
+   .hero-cta {
+     background: #0056b3;
+     color: white;
+     font-weight: 600;
+     padding: 1rem 2.5rem;
+     border: none;
+     border-radius: 40px;
+     cursor: pointer;
+     font-size: 1.1rem;
+     transition: background-color 0.3s ease;
+     user-select: none;
+   }
+
+   .hero-cta:hover {
+     background: #003974;
+   }
+
+   /* Micro animations - floating dots */
+   .floating-dots {
+     position: absolute;
+     bottom: 10%;
+     left: 50%;
+     width: 60%;
+     transform: translateX(-50%);
+     display: flex;
+     justify-content: space-between;
+     z-index: 3;
+     pointer-events: none;
+   }
+
+   .dot {
+     background: rgba(255, 255, 255, 0.3);
+     width: 10px;
+     height: 10px;
+     border-radius: 50%;
+     filter: drop-shadow(0 0 2px #fff);
+   }

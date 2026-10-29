@@ -1,0 +1,223 @@
+/* Login section */
+/* ===============================
+           Animated Background
+        ================================== */
+
+.bodytwo {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #050816;
+    color: #fff;
+}
+
+.hero-section-login {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-section-login::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(0, 255, 255, .25), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(255, 0, 255, .2), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(0, 119, 255, .2), transparent 35%);
+    animation: floatBG 10s ease-in-out infinite alternate;
+}
+
+@keyframes floatBG {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    100% {
+        transform: scale(1.1) translateY(-20px);
+    }
+}
+
+/* ===============================
+            Liquid Glass System
+        ================================== */
+.glass-card-login {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card-login::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.25),
+            transparent 40%);
+    pointer-events: none;
+}
+
+/* ===============================
+           Left Content
+        ================================== */
+.hero-content-login h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg,
+            #00e5ff,
+            #7c4dff,
+            #ff4ecd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content-login p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, .75);
+    max-width: 550px;
+}
+
+/* ===============================
+            Register Form
+        ================================== */
+.register-card {
+    padding: 40px;
+}
+
+.register-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-control {
+    height: 55px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .15);
+    color: white;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, .1);
+    color: white;
+    border-color: #00e5ff;
+    box-shadow: 0 0 20px rgba(0, 229, 255, .3);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, .5);
+}
+
+.btn-register {
+    height: 55px;
+    border: none;
+    border-radius: 15px;
+    font-weight: 600;
+    background: linear-gradient(135deg,
+            #00e5ff,
+            #7c4dff);
+    transition: .4s;
+}
+
+.btn-register:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 229, 255, .35);
+}
+
+/* ===============================
+            Entrance Animations
+        ================================== */
+.fade-left {
+    animation: fadeLeft 1.2s ease forwards;
+    opacity: 0;
+}
+
+.fade-right {
+    animation: fadeRight 1.2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Floating Glow */
+.glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: .3;
+    animation: pulse 8s infinite alternate;
+}
+
+.glow1 {
+    background: #00e5ff;
+    top: -80px;
+    left: -100px;
+}
+
+.glow2 {
+    background: #7c4dff;
+    bottom: -100px;
+    right: -100px;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.4);
+    }
+}
+
+/* Responsive */
+@media(max-width:991px) {
+    .hero-content-login {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .hero-content-login h1 {
+        font-size: 2.8rem;
+    }
+}
